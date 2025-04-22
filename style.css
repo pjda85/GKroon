@@ -146,6 +146,17 @@ body {
   margin: 2rem auto;
   padding: 0 1.5rem;
   color: var(--secondary-color);
+  border: 1px solid var(--primary-color);
+  border-radius: 8px;
+  padding: 2rem;
+  margin: 2rem auto;
+  box-shadow: 0 0 10px var(--glow-color);
+  background-color: rgba(255, 255, 255, 0.05);
+  transition: box-shadow 0.3s ease;
+}
+
+.releases-container:hover {
+  box-shadow: 0 0 15px var(--glow-color);
 }
 
 .release-grid {
@@ -170,9 +181,10 @@ body {
   text-align: center;
   font-size: 2.5rem;
   margin-bottom: 1.5rem;
-  color: var(--secondary-color);
+  color: var(--primary-color);
   font-weight: 700;
   text-shadow: 0 0 10px var(--glow-color);
+  margin-bottom: 1rem;
 }
 
 .releases-intro {
@@ -183,7 +195,8 @@ body {
   max-width: 800px;
   margin-left: auto;
   margin-right: auto;
-  color: var(--secondary-color);
+  color: black;  /* Changed from white to black */
+  margin-bottom: 2rem;
 }
 
 .platforms {
@@ -1050,6 +1063,7 @@ input[type="file"]::file-selector-button {
   background-color: black;
   color: white;
   padding: 2rem 1rem;
+  margin-top: 2rem;
 }
 
 .footer-container {
@@ -1062,6 +1076,72 @@ input[type="file"]::file-selector-button {
   padding: 0 1rem;
 }
 
+/* Social Media Section */
+.footer-section:first-child {
+  text-align: left;
+  margin-right: auto;
+}
+
+.social-icons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 1rem;
+  justify-content: flex-start;
+}
+
+.social-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 35px;
+  height: 35px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  color: white;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.social-icon:hover {
+  background-color: rgba(0, 255, 0, 0.3);
+  transform: translateY(-3px);
+  box-shadow: 0 0 10px var(--glow-color);
+}
+
+/* Legal Section */
+.footer-section:last-child {
+  text-align: right;
+}
+
+.footer-section:last-child h3 {
+  text-align: right;
+}
+
+.footer-section:last-child h3::after {
+  left: auto;
+  right: 0;
+}
+
+.legal-links {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.7rem;
+}
+
+.legal-link {
+  color: white;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  margin: 0.5rem 0;
+}
+
+.legal-link:hover {
+  color: var(--primary-color);
+}
+
+/* Common Footer Styles */
 .footer-section {
   flex: 1;
   min-width: 250px;
@@ -1092,30 +1172,68 @@ input[type="file"]::file-selector-button {
   color: white;
 }
 
-.footer-section:first-child {
-  text-align: left;
-  margin-right: auto;  /* Pushes this section to the left */
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .footer-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .footer-section {
+    width: 100%;
+    min-width: unset;
+  }
+
+  .social-icons {
+    justify-content: center;
+  }
+
+  .footer-section:last-child {
+    text-align: center;
+  }
+
+  .footer-section:last-child h3 {
+    text-align: center;
+  }
+
+  .footer-section:last-child h3::after {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .legal-links {
+    align-items: center;
+  }
 }
 
-.social-icons {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-  margin-top: 1rem;
-  justify-content: flex-start;  /* Aligns social icons to the left */
+.footer-section {
+  flex: 1;
+  min-width: 250px;
 }
 
-.social-icon {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 35px;
-  height: 35px;
-  background-color: rgba(255, 255, 255, 0.1);
-  border-radius: 50%;
-  transition: all 0.3s ease;
+.footer-section h3 {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  position: relative;
+  padding-bottom: 0.5rem;
   color: white;
-  text-decoration: none;
+}
+
+.footer-section h3::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 50px;
+  height: 2px;
+  background-color: var(--primary-color);
+}
+
+.footer-section p {
+  line-height: 1.6;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+  color: white;
 }
 
 /* Service Section Styles */
@@ -1496,7 +1614,7 @@ p {
   max-width: 1200px;
   margin: 2rem auto;
   padding: 0 1.5rem;
-  color: var(--secondary-color);
+  color: var (--secondary-color);
 }
 
 .header {
@@ -1616,7 +1734,7 @@ button:hover {
 
 .cta-button:hover {
   transform: translateY(-3px);
-  box-shadow: 0 6px 15px var(--glow-color);
+  box-shadow: 0 6px 15px var (--glow-color);
   border: 2px solid var(--glow-color);
   color: var(--primary-color);
 }
@@ -2013,7 +2131,7 @@ button:hover {
 
 .cta-button:hover {
   transform: translateY(-3px);
-  box-shadow: 0 6px 15px var(--glow-color);
+  box-shadow: 0 6px 15px var (--glow-color);
   border: 2px solid var(--glow-color);
   color: var(--primary-color);
 }
